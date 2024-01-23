@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+let nums = [5,2,4];
+let squares = [];
+nums[99] = 3;
+for(let i = 0 ; i < nums.length; i++){
+    if(nums[i]!=undefined){
+        squares[i]= Math.pow(nums[i],2);
+    }
+}
+console.log(squares);
+
+list = [
+ {product: "Apple", price: 25},
+ {product: "Cherry", price: 32},
+ {product: "Strawberry", price: 45}
+]
+console.log(list);
+
+list.sort(function(el2,el1){
+    if(el2.price > el1.price){
+        return -1;
+    }
+})
+console.log(list[0].product);
+
+ let products = [
+  "tomato",
+  "apple", 
+  "salad", 
+  "cherry", 
+  "strawberry", 
+  "banan", 
+  "apelsin",
+  "mandarin",
+  "luk"
+ ];
+ let basket = [];
+ let num = Math.round(Math.random()*(30 - 10) + 10);
+  
+
+ for(let i = 0; i < num; i++)
+ {
+    let num2 = Math.round(Math.random()*(products.length-1));
+    let obj = {
+        product : products[num2],
+        price : num * num2,
+        cnt:1
+    };
+    if(basket.find(el=>el.product == obj.product)!=undefined){
+       let x = basket.find(el=>el.product == obj.product);
+       x.cnt=x.cnt+1;
+    }else{
+        basket.push(obj);
+    }      
+       
+}
+console.log(basket);
+let sum = 0;
+for(v of basket){
+  sum = sum + (v.price*v.cnt);
+}
+ console.log(`Будьту добры к оплате ${sum}`);
+ 
+
+</script>
+</html>
